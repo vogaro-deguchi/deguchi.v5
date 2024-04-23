@@ -1,36 +1,38 @@
-・~root #任意の場所の作業ディレクトリのルート
-┗　docker #Dockerfile用ディレクトリ
-┃ ┣ node
-┃ ┗　　Dockerfile
-┗　www
-  ┗　html #デプロイ先のディレクトリ
-    ┗　assets
-      ┣ css
-      ┣ images
-      ┗　　js #書き出されたJSファイルが格納される
-        ┗　　modules  #書き出されたJSのmoduleファイルが格納される
-      ┗　　css
-        ┗　　style.css
-  ┗　　src #作業用ディレクトリ
-  　　　┗　　index.html
-  　　　┗　　aboutus
-    　　　┗　　index.html
-  　　　　┗　　js
-  　  　　┣ main.js #Viteが作成したファイル
-  　  　　┗　　[使用するJavaScriptの各ファイル名など].js
-  　　　　┗　　lib
-    　　　┗　　components #EJSで使用するHTMLコンポーネントファイルを格納
-    　　　　　　　┗　　metadata.ejs
-     　　┗　　pagedata #EJSで使用するデータ(JSON）ファイルを格納
-    　　　　　　　　┗　　pagedata.json
-  　　　　　┗　　public #public ディレクトリ
-  　  　　　　┗　　assets
-    　  　　　　┗　　images #使用する画像を入れておく
-  　　　　　　┗　　scss #構造は任意で
-    　　　　　┗　　css
-      　　　　　┗　　style.scss
-    　└・components
-      　└・_[各コンポーネントファイル名].scss
-  └・.gitignore
-┣ docker-compose.yml 
-└・.env #Dockerのためのファイル
+# Vite dev template
+
+# ディレクトリ構成
+
+
+```
+root
+  ├── dist
+  ├── src
+  │   ├── [pages]
+  │   │    └── index.html
+  │   ├── assets
+  │   │   ├── scripts
+  │   │   │   ├── pages
+  │   │   │   │   └── [pages]
+  │   │   │   │        └── index.js
+  │   │   │   └── common.js
+  │   │   └── styles
+  │   │       ├── pages
+  │   │       │   └── [pages]
+  │   │       │        ├── _module.scss
+  │   │       │        └── style.scss     //　同階層の'_*.scss'をimport   
+  │   │       └── main.scss     // pages以外のファイルを全てimport
+  │   ├── components
+  │   │   ├── header.ejs
+  │   │   ├── footer.ejs
+  │   │   └── ...
+  │   ├── public
+  │   │   └── assets
+  │   │       ├── images
+  │   │       ├── scripts   // 圧縮したくないscripts
+  │   │       └── styles    // 圧縮したくないstyles
+  │   └── index.html
+  ├── .stylelintrc.js
+  ├── package.json
+  └── vite.config.js
+
+```
