@@ -1,0 +1,20 @@
+/* stylelint-disable */
+.pc {
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: none !important;
+  }
+}
+
+.sp {
+  @include media-breakpoint-up(md) {
+    display: none !important;
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+  }
+}

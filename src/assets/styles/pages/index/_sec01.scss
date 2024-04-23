@@ -1,0 +1,8 @@
+.sec01 {
+  height: 100vh;
+  background-color: #ccc;
+
+  @include media-breakpoint-up(md) {
+    background-color: #fff;
+  }
+}
