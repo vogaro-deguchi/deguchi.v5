@@ -1,5 +1,7 @@
 # Vite dev template
 
+- node 18
+
 # ディレクトリ構成
 
 
