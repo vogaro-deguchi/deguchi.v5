@@ -46,15 +46,7 @@ export default defineConfig({
       output: {
         entryFileNames: `assets/[name].js`,
         chunkFileNames: `assets/[name].js`,
-        assetFileNames: (assetInfo) => {
-          if (/\.( gif|jpeg|jpg|png|svg|webp| )$/.test(assetInfo.name)) {
-            return 'assets/[name].[ext]';
-          }
-          if (/\.css$/.test(assetInfo.name)) {
-            return 'assets/styles/[name].[ext]';
-          }
-          return 'assets/[name].[ext]';
-        },
+        assetFileNames: `assets/[name].[ext]`
       },
     },
   },
