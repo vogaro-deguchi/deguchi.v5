@@ -24,8 +24,10 @@ root
   │   │       │        └── style.scss     //　同階層の'_*.scss'をimport   
   │   │       └── main.scss     // pages以外のファイルを全てimport
   │   ├── components
-  │   │   ├── header.ejs
-  │   │   ├── footer.ejs
+  │   │   └── ...
+  │   ├── layout
+  │   │   ├── _header.ejs
+  │   │   ├── _footer.ejs
   │   │   └── ...
   │   ├── public
   │   │   └── assets

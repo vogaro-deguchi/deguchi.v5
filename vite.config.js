@@ -6,9 +6,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const jsFiles = Object.fromEntries(
-  globSync('src/**/*.js', { ignore: ['node_modules/**','**/modules/**','**/dist/**']}).map(file => [
+  globSync('src/assets/scripts/**/*.js', { ignore: ['node_modules/**','**/modules/**','**/dist/**,']}).map(file => [
     path.relative(
-      'src',
+      'src/assets/',
       file.slice(0, file.length - path.extname(file).length)
     ),
     fileURLToPath(new URL(file, import.meta.url))
@@ -16,9 +16,9 @@ const jsFiles = Object.fromEntries(
 );
 
 const scssFiles = Object.fromEntries(
-  globSync('src/assets/styles/pages/**/*.scss', { ignore: ['src/assets/styles/pages/**/_*.scss'] }).map(file => [
+  globSync('src/assets/styles/**/*.scss', { ignore: ['src/assets/styles/**/_*.scss'] }).map(file => [
     path.relative(
-      'src',
+      'src/assets/',
       file.slice(0, file.length - path.extname(file).length)
     ),
     fileURLToPath(new URL(file, import.meta.url))
@@ -47,13 +47,6 @@ export default defineConfig({
         entryFileNames: `assets/[name].js`,
         chunkFileNames: `assets/[name].js`,
         assetFileNames: `assets/[name].[ext]`
-      },
-    },
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@import '@/assets/styles/main.scss';`,
       },
     },
   },
